@@ -66,10 +66,12 @@ app.post("/msg", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const msg = req.body.msg;
+  const time = req.body.time;
   const newMsg = new Msg({
     name,
     email,
     msg,
+    time,
   });
   try {
     await newMsg.save();
